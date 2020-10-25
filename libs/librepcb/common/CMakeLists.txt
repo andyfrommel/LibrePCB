@@ -1,6 +1,6 @@
 find_package(Qt5 5.2.0 COMPONENTS Widgets OpenGL Network Sql PrintSupport REQUIRED)
 
-find_package(type_safe REQUIRED)
+find_package(TypeSafe REQUIRED)
 
 # By default, LibrePCB is built as a "dev build", meaning that the git commit hash is embedded
 # into the binary and that the binary uses the shared resources from the source tree (using
@@ -348,5 +348,5 @@ target_link_libraries(librepcb_common
     Qt::Network
     Qt::Sql
     Qt::PrintSupport
-    type_safe::type_safe
+    TypeSafe::TypeSafe
 )
