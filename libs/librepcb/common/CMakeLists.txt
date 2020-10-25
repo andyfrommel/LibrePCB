@@ -2,6 +2,7 @@ find_package(Qt5 5.2.0 COMPONENTS Widgets OpenGL Network Sql PrintSupport REQUIR
 
 find_package(TypeSafe REQUIRED)
 find_package(DelaunayTriangulation REQUIRED)
+find_package(Optional REQUIRED)
 
 # By default, LibrePCB is built as a "dev build", meaning that the git commit hash is embedded
 # into the binary and that the binary uses the shared resources from the source tree (using
@@ -351,4 +352,5 @@ target_link_libraries(librepcb_common
     Qt::PrintSupport
     TypeSafe::TypeSafe
     DelaunayTriangulation::DelaunayTriangulation
+    Optional::Optional
 )
