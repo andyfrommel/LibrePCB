@@ -354,3 +354,6 @@ target_link_libraries(librepcb_common
     DelaunayTriangulation::DelaunayTriangulation
     Optional::Optional
 )
+
+# Alias to namespaced variant
+add_library(LibrePCB::Common ALIAS librepcb_common)
