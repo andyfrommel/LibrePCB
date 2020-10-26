@@ -4,6 +4,11 @@ find_package(TypeSafe REQUIRED)
 find_package(DelaunayTriangulation REQUIRED)
 find_package(Optional REQUIRED)
 
+# Enable Qt MOC/UIC/RCC
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTORCC ON)
+
 # By default, LibrePCB is built as a "dev build", meaning that the git commit hash is embedded
 # into the binary and that the binary uses the shared resources from the source tree (using
 # absolute paths embedded into the binary). If you are building a release build for distribution,
