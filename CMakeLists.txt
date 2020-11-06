@@ -40,6 +40,7 @@ find_package(TypeSafe REQUIRED)
 find_package(DelaunayTriangulation REQUIRED)
 find_package(Optional REQUIRED)
 find_package(QuaZip REQUIRED)
+find_package(MuParser REQUIRED)
 
 # Add libs
 add_subdirectory(libs/librepcb/common)
