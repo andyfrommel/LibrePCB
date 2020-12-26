@@ -41,6 +41,7 @@ find_package(DelaunayTriangulation REQUIRED)
 find_package(Optional REQUIRED)
 find_package(QuaZip REQUIRED)
 find_package(MuParser REQUIRED)
+find_package(Polyclipping REQUIRED)
 
 # Add libs
 add_subdirectory(libs/librepcb/common)

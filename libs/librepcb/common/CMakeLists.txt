@@ -354,6 +354,7 @@ target_link_libraries(librepcb_common
     Optional::Optional
     QuaZip::QuaZip
     MuParser::MuParser
+    Polyclipping::Polyclipping
 )
 
 # Alias to namespaced variant
