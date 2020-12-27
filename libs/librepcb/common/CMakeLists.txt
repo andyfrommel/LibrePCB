@@ -2,6 +2,40 @@ find_package(Qt5 5.2.0 COMPONENTS Widgets OpenGL Network Sql PrintSupport REQUIR
 
 find_package(type_safe REQUIRED)
 
+# By default, LibrePCB is built as a "dev build", meaning that the git commit hash is embedded
+# into the binary and that the binary uses the shared resources from the source tree (using
+# absolute paths embedded into the binary). If you are building a release build for distribution,
+# set this to false by passing `-DLIBREPCB_DEV_BUILD=0`.
+#
+# Note: This is independent from CMAKE_BUILD_TYPE!
+SET(LIBREPCB_DEV_BUILD YES CACHE BOOL "Whether this is a development build")
+if(LIBREPCB_DEV_BUILD)
+    message(STATUS "Creating a dev build")
+
+    # Detect git commit hash
+    find_package(Git)
+    if(GIT_FOUND AND EXISTS "${CMAKE_SOURCE_DIR}/.git")
+        execute_process(COMMAND
+            ${GIT_EXECUTABLE} -C "${CMAKE_SOURCE_DIR}" rev-parse --short --verify HEAD
+            OUTPUT_VARIABLE SHORT_SHA
+            OUTPUT_STRIP_TRAILING_WHITESPACE
+        )
+        set(GIT_COMMIT_SHA ${SHORT_SHA})
+    else()
+        message(STATUS "Git not found, cannot set version info")
+    endif()
+
+    # Detect path to source share directory
+    # Note: Unfortunately the SHELL_PATH generator expression is not yet supported on CMake 3.2.
+    file(TO_NATIVE_PATH "/" _path_separator)
+    set(SHARE_DIRECTORY_SOURCE "${CMAKE_SOURCE_DIR}${_path_separator}share")
+else()
+    message(STATUS "Creating a non-dev build")
+endif()
+
+# Generate build_env.h file
+configure_file(build_env.h.in build_env.h @ONLY)
+
 # Export library
 add_library(librepcb_common
     # Forms
