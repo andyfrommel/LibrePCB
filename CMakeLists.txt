@@ -8,7 +8,6 @@ endif()
 project(librepcb
     VERSION 0.1.5
     DESCRIPTION "A powerful, innovative and intuitive EDA tool for everyone"
-    HOMEPAGE_URL "https://librepcb.org/"
     LANGUAGES CXX)
 
 # Global options

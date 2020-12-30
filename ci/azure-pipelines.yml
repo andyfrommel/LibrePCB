@@ -7,4 +7,5 @@ jobs:
 - template: azure-jobs-doxygen.yml
 - template: azure-jobs-linux.yml
 - template: azure-jobs-macos.yml
-- template: azure-jobs-windows.yml
+  # TODO
+  #- template: azure-jobs-windows.yml
