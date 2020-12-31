@@ -33,6 +33,9 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 # Configure module path
 set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
 
+# Include GNU install dirs variables
+include(GNUInstallDirs)
+
 # Find required Qt packages
 find_package(Qt5 5.2.0 COMPONENTS Concurrent Gui Network OpenGL PrintSupport Sql Svg Widgets REQUIRED)
 if(BUILD_TESTS)

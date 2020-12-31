@@ -24,3 +24,11 @@ target_link_libraries(uuid_generator
     Qt5::Widgets
 )
 set_target_properties(uuid_generator PROPERTIES OUTPUT_NAME uuid-generator)
+
+# Install target
+install(TARGETS uuid_generator
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+)
