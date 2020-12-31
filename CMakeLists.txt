@@ -1,5 +1,5 @@
 # CMake version configuration
-cmake_minimum_required(VERSION 3.2...3.18)
+cmake_minimum_required(VERSION 3.5...3.18)
 if(${CMAKE_VERSION} VERSION_LESS 3.12)
     cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
 endif()
@@ -7,8 +7,8 @@ endif()
 # Define project
 project(librepcb
     VERSION 0.1.5
-    DESCRIPTION "A powerful, innovative and intuitive EDA tool for everyone"
-    LANGUAGES CXX)
+    LANGUAGES CXX
+)
 
 # Global options
 option(UNBUNDLE_CMARK "Don't use vendored cmark library." OFF)
