@@ -13,6 +13,7 @@ project(librepcb
 
 # Global options
 option(UNBUNDLE_CMARK "Don't use vendored cmark library." OFF)
+option(UNBUNDLE_FONTOBENE_QT5 "Don't use vendored fontobene-qt5 library." OFF)
 option(UNBUNDLE_ALL "Don't use any vendored library." OFF)
 option(BUILD_TESTS "Build unit tests." ON)
 
@@ -40,12 +41,13 @@ if(BUILD_TESTS)
 endif()
 
 # Find third party libraries
-find_package(TypeSafe REQUIRED)
 find_package(DelaunayTriangulation REQUIRED)
-find_package(Optional REQUIRED)
-find_package(QuaZip REQUIRED)
+find_package(FontoBeneQt5 REQUIRED)
 find_package(MuParser REQUIRED)
+find_package(Optional REQUIRED)
 find_package(Polyclipping REQUIRED)
+find_package(QuaZip REQUIRED)
+find_package(TypeSafe REQUIRED)
 if(BUILD_TESTS)
     find_package(GTest REQUIRED)
 endif()
