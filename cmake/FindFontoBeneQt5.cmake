@@ -17,7 +17,7 @@ endif()
 
 find_package(PkgConfig QUIET)
 if(PKGCONFIG_FOUND)
-    pkg_check_modules(FONTOBENE REQUIRED fontobene-qt5)
+    pkg_check_modules(FONTOBENE fontobene-qt5)
 endif()
 if(FONTOBENE_FOUND)
     message(STATUS "Using system FontoBeneQt5 (via pkg-config)")
