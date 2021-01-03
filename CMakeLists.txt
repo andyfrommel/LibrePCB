@@ -91,3 +91,15 @@ add_subdirectory(apps/EagleImport)
 if(BUILD_TESTS)
     add_subdirectory(tests/unittests)
 endif()
+
+# Install target for shared files
+file(GLOB SHARE_DIRS
+    LIST_DIRECTORIES true
+    RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}
+    share/*
+)
+foreach(sharedir ${SHARE_DIRS})
+    if(IS_DIRECTORY ${sharedir})
+        install(DIRECTORY ${sharedir} DESTINATION ${CMAKE_INSTALL_DATAROOTDIR})
+    endif()
+endforeach()
