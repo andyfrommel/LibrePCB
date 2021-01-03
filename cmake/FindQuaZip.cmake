@@ -3,7 +3,6 @@ if(EXISTS "${QUAZIP_SUBMODULE_BASEPATH}" AND NOT UNBUNDLE_QUAZIP AND NOT UNBUNDL
     message(STATUS "Using vendored QuaZip")
 
     # Include local submodule
-    # TODO: Build this as static lib!
     add_subdirectory(
         "${QUAZIP_SUBMODULE_BASEPATH}"
         "${CMAKE_BINARY_DIR}/libs/quazip"
