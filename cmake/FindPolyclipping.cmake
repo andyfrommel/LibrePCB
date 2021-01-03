@@ -13,4 +13,17 @@ if(EXISTS "${POLYCLIPPING_SUBMODULE_BASEPATH}" AND NOT UNBUNDLE_POLYCLIPPING AND
     return()
 endif()
 
-# TODO: Find unbundled variant via pkg-config
+# Otherwise, try to find shared library on the system via pkg-config
+find_package(PkgConfig QUIET)
+if(PKGCONFIG_FOUND)
+    pkg_check_modules(POLYCLIPPING IMPORTED_TARGET polyclipping)
+endif()
+if(POLYCLIPPING_FOUND)
+    message(STATUS "Using system Polyclipping (via pkg-config)")
+    add_library(Polyclipping::Polyclipping ALIAS PkgConfig::POLYCLIPPING)
+    return()
+endif()
+
+message(FATAL_ERROR "Did not find Polyclipping system library via pkg-config")
+
+# Here we could search for the library manually, using find_path etc
