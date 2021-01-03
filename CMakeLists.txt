@@ -53,6 +53,10 @@ find_package(TypeSafe REQUIRED)
 if(BUILD_TESTS)
     find_package(GTest REQUIRED)
 endif()
+# Hoedown is only needed on Qt <5.14
+if(Qt5Core_VERSION_MAJOR EQUAL 5 AND Qt5Core_VERSION_MINOR LESS 14)
+    find_package(Hoedown REQUIRED)
+endif()
 
 # Add libs
 add_subdirectory(libs/librepcb/common)
