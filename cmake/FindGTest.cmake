@@ -3,7 +3,6 @@ if(EXISTS "${GTEST_SUBMODULE_BASEPATH}" AND NOT UNBUNDLE_GTEST AND NOT UNBUNDLE_
     message(STATUS "Using vendored GoogleTest / GoogleMock")
 
     # Include local submodule
-    # TODO: Build this as static lib!
     add_subdirectory(
         "${GTEST_SUBMODULE_BASEPATH}"
         "${CMAKE_BINARY_DIR}/libs/googletest"

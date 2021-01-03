@@ -8,7 +8,6 @@ if(EXISTS "${MUPARSER_SUBMODULE_BASEPATH}" AND NOT UNBUNDLE_MUPARSER AND NOT UNB
     set(ENABLE_WIDE_CHAR OFF CACHE BOOL "Enable wide character support" FORCE)
 
     # Include local submodule
-    # TODO: Build this as static lib!
     add_subdirectory(
         "${MUPARSER_SUBMODULE_BASEPATH}"
         "${CMAKE_BINARY_DIR}/libs/muparser"

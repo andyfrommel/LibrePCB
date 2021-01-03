@@ -16,6 +16,9 @@ option(UNBUNDLE_FONTOBENE_QT5 "Don't use vendored fontobene-qt5 library." OFF)
 option(UNBUNDLE_ALL "Don't use any vendored library." OFF)
 option(BUILD_TESTS "Build unit tests." ON)
 
+# Force static linking for local libs
+set(BUILD_SHARED_LIBS OFF CACHE BOOL "Link dynamically against local libraries." FORCE)
+
 # Auto-include current directory
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
