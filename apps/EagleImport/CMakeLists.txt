@@ -31,11 +31,3 @@ target_link_libraries(eagle_import
     Qt5::Widgets
 )
 set_target_properties(eagle_import PROPERTIES OUTPUT_NAME "eagle-import")
-
-# Install target
-install(TARGETS eagle_import
-    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
-)
